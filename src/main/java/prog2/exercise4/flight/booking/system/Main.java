@@ -4,10 +4,6 @@ package prog2.exercise4.flight.booking.system;
  * Hello world!
  *
  */
-/**
- * Hello world!
- *
- */
 import java.util.Scanner;
 import java.time.LocalDate;
 
@@ -81,4 +77,3 @@ public class Main
         s.close();
     }
 }
-

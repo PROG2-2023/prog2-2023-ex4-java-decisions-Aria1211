@@ -49,7 +49,6 @@ public class FlightBooking {
         }
     }
     
-    
     enum TripSource {
         NANJING("Nanjing"), BEIJING("Beijing"), SHANGHAI("Shanghai"), OULU("Oulu"), HELSINKI("Helsinki"), PARIS("Paris");
         private String source;
@@ -94,10 +93,10 @@ public class FlightBooking {
         }
     }
 
+
     public String getFlightCompany() {
         return flightCompany;
     }
-
 
     public void setDaysToAdd(LocalDate date1, LocalDate date2) {
         daysToAdd = date1.until(date2, ChronoUnit.DAYS);
@@ -125,11 +124,6 @@ public class FlightBooking {
 	}
     public LocalDate getReturnDate() {
         return returnDate;
-    }
-
-	
-    public FlightBooking() {
-
     }
 
     public FlightBooking(String passengerFullName, LocalDate departureDate, LocalDate returnDate, int childPassengers, int adultPassengers) {
@@ -178,35 +172,36 @@ public class FlightBooking {
         return totalPassengers;
     }
 
+    
     public void setDepartingTicketPrice(int childPassengers, int adultPassengers) {
         if ((tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) || (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) || (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) || (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU))
         {
             if (bookingClass == BookingClass.FIRST)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 250)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 250);
             }
             if (bookingClass == BookingClass.BUSINESS)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 150)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 150);
             }
             if (bookingClass == BookingClass.ECONOMY)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 50)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 50);
             }
         }
         else
         {
             if (bookingClass == BookingClass.FIRST)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 250)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 250);
             }
             if (bookingClass == BookingClass.BUSINESS)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150);
             }
             if (bookingClass == BookingClass.ECONOMY)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150)*2);
+                this.departingTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150);
             }  
         }
     }
@@ -219,30 +214,30 @@ public class FlightBooking {
         {
             if (bookingClass == BookingClass.FIRST)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 250)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 250);
             }
             if (bookingClass == BookingClass.BUSINESS)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 150)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 150);
             }
             if (bookingClass == BookingClass.ECONOMY)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 50)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.1*300)) + (0.05*300))) + (adultPassengers*((300 + (0.1*300)) + (0.05*300)))) + 50);
             }
         }
         else
         {
             if (bookingClass == BookingClass.FIRST)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 250)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 250);
             }
             if (bookingClass == BookingClass.BUSINESS)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 150);
             }
             if (bookingClass == BookingClass.ECONOMY)
             {
-                this.departingTicketPrice = Math.abs((((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 50)*2);
+                this.returnTicketPrice = Math.abs(((childPassengers *((300 + (0.15*300)) + (0.10*300))) + (adultPassengers*((300 + (0.15*300)) + (0.10*300)))) + 50);
             }  
         }
     }
@@ -253,16 +248,17 @@ public class FlightBooking {
     public void setTotalTicketPrice() {
         if (tripType == TripType.ONE_WAY)
         {
-            this.totalTicketPrice = departingTicketPrice;
+            this.totalTicketPrice = this.departingTicketPrice;
         }
         if (tripType == TripType.RETURN)
         {
-            this.totalTicketPrice = departingTicketPrice + returnTicketPrice;
+            this.totalTicketPrice = this.departingTicketPrice * 2;
         }
     }
     public double getTotalTicketPrice() {
-        return 5330.0;
+        return totalTicketPrice;
     }
+
 
     public void setBookingClass(String i) {
         switch (i)
@@ -495,13 +491,13 @@ public class FlightBooking {
     }
 
 
-
     public String toString() {
 		if (daysToAdd < 2)
         {
             return  "Dear "+ this.passengerFullName+ ". Thank you for booking your flight with "+ flightCompany+".\n" +
 				"Following are the details of your booking and the trip: \n" +
 				"Ticket Number: "+this.ticketNumber+"\n" +
+                "From "+tripSource+" to "+tripDestination+ "\n" +
 				"Date of departure: "+this.departureDate+"\n" +
 				"Date of return: "+this.returnDate+" (Changed from old returningDate to new returningDate)"+"\n" +
 				"Total passengers: "+this.totalPassengers+"\n" +
@@ -512,6 +508,7 @@ public class FlightBooking {
             return  "Dear "+ this.passengerFullName+ ". Thank you for booking your flight with "+ flightCompany+".\n" +
                     "Following are the details of your booking and the trip: \n" +
                     "Ticket Number: "+this.ticketNumber+"\n" +
+                    "From "+tripSource+" to "+tripDestination+ "\n" +
                     "Date of departure: "+this.departureDate+"\n" +
                     "Date of return: "+this.returnDate+"\n" +
                     "Total passengers: "+this.totalPassengers+"\n" +
