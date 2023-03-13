@@ -426,10 +426,6 @@ public class FlightBooking {
         return destinationAirport;
     }
 
-    
-    public void setTicketNumber(String ticketNumber) {
-        this.ticketNumber = ticketNumber;
-    }
 
     Random random = new Random();
     public void setTicketNumber() {
