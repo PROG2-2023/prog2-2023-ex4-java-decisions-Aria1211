@@ -16,7 +16,7 @@ public class Main
     public static void main( String[] args )
     {
         Scanner s = new Scanner(System.in);
-
+        
         System.out.println("Please enter your full name: ");
         String name = s.nextLine();
         FlightBooking customer = new FlightBooking("null", null, null, 0, 0);
@@ -28,13 +28,12 @@ public class Main
         String sreturn = s.nextLine();
         LocalDate date2 = LocalDate.parse(sreturn);
 
-        String tn = "11FASDFDOM";
         
         System.out.println("Please enter the number of the child: ");
         int child = s.nextInt();
         System.out.println("Please enter the number of the adult: ");
         int adult = s.nextInt();
-        
+
         s.nextLine();
         System.out.println("Please select your seat:");
         System.out.println("1. First");
@@ -68,7 +67,6 @@ public class Main
         customer.setDaysToAdd(date1, date2);
         customer.setDepartureDate(date1);
         customer.setReturnDate(date2);
-        customer.setTicketNumber(tn);
         
         customer.setPassengerFullName(name);
         customer.setChildPassengers(child);
