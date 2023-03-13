@@ -425,6 +425,7 @@ public class FlightBooking {
 
     Random random = new Random();
     public void setTicketNumber() {
+        ticketNumber = null;
         if (tripType == TripType.ONE_WAY)
         {
             ticketNumber = "11";
@@ -449,45 +450,50 @@ public class FlightBooking {
             char f = (char) ((random.nextInt(26) + 65));
             ticketNumber = ticketNumber + f;
         }
-        if (tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) {
+        if ((tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) || (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) || (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) || (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU))
+        {
             ticketNumber = ticketNumber + "DOM";
         }
-        if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
-            ticketNumber = ticketNumber + "DOM";
-        }
-        if (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) {
-            ticketNumber = ticketNumber + "DOM";
-        }
-        if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU) {
-            ticketNumber = ticketNumber + "DOM";
-        }
-        if (tripSource == TripSource.NANJING && tripDestination == TripDestination.OULU) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.OULU && tripDestination == TripDestination.NANJING) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.NANJING && tripDestination == TripDestination.HELSINKI) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.NANJING) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.OULU) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.OULU && tripDestination == TripDestination.BEIJING) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
-            ticketNumber = ticketNumber + "INT";
-        }
-        if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.BEIJING) {
+        else
+        {
             ticketNumber = ticketNumber + "INT";
         }
     }
     public String getTicketNumber() {
-        return "11FASDFDOM";
+        ticketNumber = null;
+        if (tripType == TripType.ONE_WAY)
+        {
+            ticketNumber = "11";
+        }
+        if (tripType == TripType.RETURN)
+        {
+            ticketNumber = "22";
+        }
+        if (bookingClass == BookingClass.FIRST)
+        {
+            ticketNumber = ticketNumber + "F";
+        }
+        if (bookingClass == BookingClass.BUSINESS)
+        {
+            ticketNumber = ticketNumber + "B";
+        }
+        if (bookingClass == BookingClass.ECONOMY)
+        {
+            ticketNumber = ticketNumber + "E";
+        }
+        for (int i = 0; i < 4; i++) {
+            char f = (char) ((random.nextInt(26) + 65));
+            ticketNumber = ticketNumber + f;
+        }
+        if ((tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) || (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) || (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) || (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU))
+        {
+            ticketNumber = ticketNumber + "DOM";
+        }
+        else
+        {
+            ticketNumber = ticketNumber + "INT";
+        }
+        return this.ticketNumber;
     }
 
 
