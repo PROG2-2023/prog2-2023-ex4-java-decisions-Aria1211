@@ -39,58 +39,23 @@ public class FlightBooking {
     }
     
     enum TripType{
-        ONE_WAY("One way"), RETURN("Return");
-        private String type;
-        private TripType(String type) {
-            this.type = type;
-        }
-        public String getType() {
-            return type;
-        }
+        ONE_WAY, RETURN;
     }
     
     enum TripSource {
-        NANJING("Nanjing"), BEIJING("Beijing"), SHANGHAI("Shanghai"), OULU("Oulu"), HELSINKI("Helsinki"), PARIS("Paris");
-        private String source;
-        private TripSource(String source) {
-            this.source = source;
-        }
-        public String getSource() {
-            return source;
-        }
+        NANJING, BEIJING, SHANGHAI, OULU, HELSINKI, PARIS;
     }
     
     enum TripDestination {
-        NANJING("Nanjing"), BEIJING("Beijing"), SHANGHAI("Shanghai"), OULU("Oulu"), HELSINKI("Helsinki"), PARIS("Paris");
-        private String destination;
-        private TripDestination(String destination) {
-            this.destination = destination;
-        }
-        public String getDestination() {
-            return destination;
-        }
+        NANJING, BEIJING, SHANGHAI, OULU, HELSINKI, PARIS;
     }
     
     enum SourceAirport {
-        NANJING("Nanjing Lukou International Airport"), BEIJING("Beijing Capital International Airport"), SHANGHAI("Shanghai Pudong International Airport"), OULU("Oulu Airport"), HELSINKI("Helsinki Airport"), PARIS("Paris Charles de Gaulle Airport");
-        private String sAirport;
-        private SourceAirport(String sAirport) {
-            this.sAirport = sAirport;
-        }
-        public String getSAirport() {
-            return sAirport;
-        }
+        NANJING_LUKOU_INTERNATIONAL_AIRPORT, BEIJING_CAPITAL_INTERNATIONAL_AIRPORT, SHANGHAI_PUDONG_INTERNATIONAL_AIRPORT, OULU_AIRPORT, HELSINKI_AIRPORT, PARIS_CHARLES_DE_DAULLE_AIRPORT;
     }
     
     enum DestinationAirport {
-        NANJING("Nanjing Lukou International Airport"), BEIJING("Beijing Capital International Airport"), SHANGHAI("Shanghai Pudong International Airport"), OULU("Oulu Airport"), HELSINKI("Helsinki Airport"), PARIS("Paris Charles de Gaulle Airport");
-        private String dAirport;
-        private DestinationAirport(String dAirport) {
-            this.dAirport = dAirport;
-        }
-        public String getDAirport() {
-            return dAirport;
-        }
+        NANJING_LUKOU_INTERNATIONAL_AIRPORT, BEIJING_CAPITAL_INTERNATIONAL_AIRPORT, SHANGHAI_PUDONG_INTERNATIONAL_AIRPORT, OULU_AIRPORT, HELSINKI_AIRPORT, PARIS_CHARLES_DE_DAULLE_AIRPORT;
     }
 
 
@@ -132,9 +97,6 @@ public class FlightBooking {
         this.returnDate = returnDate;
         this.childPassengers = childPassengers;
         this.adultPassengers = adultPassengers;
-    }
-    public FlightBooking(BookingClass bookingClass) {
-        this.bookingClass = BookingClass.FIRST;
     }
 
     public void setFlightID() {
@@ -304,19 +266,19 @@ public class FlightBooking {
         {
             case "1":
             tripSource = TripSource.NANJING;
-            sourceAirport = SourceAirport.NANJING;
+            sourceAirport = SourceAirport.NANJING_LUKOU_INTERNATIONAL_AIRPORT;
             break;
             case "2":
             tripSource = TripSource.BEIJING;
-            sourceAirport = SourceAirport.BEIJING;
+            sourceAirport = SourceAirport.BEIJING_CAPITAL_INTERNATIONAL_AIRPORT;
             break;
             case "3":
             tripSource = TripSource.OULU;
-            sourceAirport = SourceAirport.OULU;
+            sourceAirport = SourceAirport.OULU_AIRPORT;
             break;
             case "4":
             tripSource = TripSource.HELSINKI;
-            sourceAirport = SourceAirport.HELSINKI;
+            sourceAirport = SourceAirport.HELSINKI_AIRPORT;
             break;
             default:
             System.out.println("Error!!!");
@@ -341,15 +303,15 @@ public class FlightBooking {
                 break;
                 case "2":
                 tripDestination = TripDestination.BEIJING;
-                destinationAirport = DestinationAirport.BEIJING;
+                destinationAirport = DestinationAirport.BEIJING_CAPITAL_INTERNATIONAL_AIRPORT;
                 break;
                 case "3":
                 tripDestination = TripDestination.OULU;
-                destinationAirport = DestinationAirport.OULU;
+                destinationAirport = DestinationAirport.OULU_AIRPORT;
                 break;
                 case "4":
                 tripDestination = TripDestination.HELSINKI;
-                destinationAirport = DestinationAirport.HELSINKI;
+                destinationAirport = DestinationAirport.HELSINKI_AIRPORT;
                 break;
             }
             break;
@@ -358,18 +320,18 @@ public class FlightBooking {
             {
                 case "1":
                 tripDestination = TripDestination.NANJING;
-                destinationAirport = DestinationAirport.NANJING;
+                destinationAirport = DestinationAirport.NANJING_LUKOU_INTERNATIONAL_AIRPORT;
                 break;
                 case "2":
                 System.out.println("Error!!!");
                 break;
                 case "3":
                 tripDestination = TripDestination.OULU;
-                destinationAirport = DestinationAirport.OULU;
+                destinationAirport = DestinationAirport.OULU_AIRPORT;
                 break;
                 case "4":
                 tripDestination = TripDestination.HELSINKI;
-                destinationAirport = DestinationAirport.HELSINKI;   
+                destinationAirport = DestinationAirport.HELSINKI_AIRPORT;   
                 break;
             }
             break;
@@ -378,18 +340,18 @@ public class FlightBooking {
             {
                 case "1":
                 tripDestination = TripDestination.NANJING;
-                destinationAirport = DestinationAirport.NANJING;
+                destinationAirport = DestinationAirport.NANJING_LUKOU_INTERNATIONAL_AIRPORT;
                 break;
                 case "2":
                 tripDestination = TripDestination.BEIJING;
-                destinationAirport = DestinationAirport.BEIJING;
+                destinationAirport = DestinationAirport.BEIJING_CAPITAL_INTERNATIONAL_AIRPORT;
                 break;
                 case "3":
                 System.out.println("Error!!!");
                 break;
                 case "4":
                 tripDestination = TripDestination.HELSINKI;
-                destinationAirport = DestinationAirport.HELSINKI;
+                destinationAirport = DestinationAirport.HELSINKI_AIRPORT;
                 break;
             }
             break;
@@ -398,15 +360,15 @@ public class FlightBooking {
             {
                 case "1":
                 tripDestination = TripDestination.NANJING;
-                destinationAirport = DestinationAirport.NANJING;
+                destinationAirport = DestinationAirport.NANJING_LUKOU_INTERNATIONAL_AIRPORT;
                 break;
                 case "2":
                 tripDestination = TripDestination.BEIJING;
-                destinationAirport = DestinationAirport.BEIJING;
+                destinationAirport = DestinationAirport.BEIJING_CAPITAL_INTERNATIONAL_AIRPORT;
                 break;
                 case "3":
                 tripDestination = TripDestination.OULU;
-                destinationAirport = DestinationAirport.OULU;
+                destinationAirport = DestinationAirport.OULU_AIRPORT;
                 break;
                 case "4":
                 System.out.println("Error!!!");
